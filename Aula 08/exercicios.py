@@ -24,6 +24,7 @@ class Pessoa:
         self.data_de_nascimento = data_de_nascimento
         self.status = True
         self.funcao = funcao
+        self.emprestimos = []
 
 class Biblioteca:
     def __init__(self, nome, endereco, horario):
@@ -33,7 +34,7 @@ class Biblioteca:
         self.catalogo = []
         self.usuarios = []
         self.funcionarios = []
-        self.emprestar = []
+      
 
     def cadastrar_usuarios(self, usuario: Pessoa):
         self.usuarios.append(usuario)
@@ -46,7 +47,7 @@ class Biblioteca:
         self.catalogo.append(livro)
         print('Livro cadastrado com sucesso!')
 
-    def emprestar_livro(self, livro):
+    def emprestar_livro(self, livro, pessoa):
         if not livro.emprestado and livro in self.catalogo:
             livro.emprestado = True
             print('Livro emprestado com sucesso!')
