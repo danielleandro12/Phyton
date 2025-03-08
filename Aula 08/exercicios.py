@@ -33,6 +33,7 @@ class Biblioteca:
         self.catalogo = []
         self.usuarios = []
         self.funcionarios = []
+        self.emprestar = []
 
     def cadastrar_usuarios(self, usuario: Pessoa):
         self.usuarios.append(usuario)
@@ -52,7 +53,7 @@ class Biblioteca:
         else:
             print('Livro indisponível ou emprestado')
 
-    def devolver_livro(self, livro):
+    def devolver_livro(self, livro, pessoa):
         if livro.emprestado:
             livro.emprestado = False
             print('Livro devolvido com sucesso')
